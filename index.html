@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ALTHAF TRADING</title><style>body{margin:0;background:#0a0f1c;color:white;font-family:sans-serif}.top{background:black;padding:14px;border-bottom:2px solid #fbbf24;display:flex;justify-content:space-between;position:sticky;top:0}.card{background:#121a2b;border:1px solid #1e2d4a;border-radius:16px;padding:16px;margin:16px}.harga{font-size:36px;font-weight:900;color:#fbbf24;text-align:center}#chart{height:550px}</style></head><body><div class="top"><b style="color:#fbbf24">ALTHAF • XAUUSD H1</b><span style="background:#22c55e;color:black;padding:4px 12px;border-radius:20px;font-weight:800;font-size:12px">LIVE</span></div><div class="card"><div class="harga" id="h">$2,645.88</div><div style="text-align:center;font-size:12px;color:#94a3b8">Harga Emas Spot - Cubit 2 jari untuk zoom</div></div><div class="card"><div id="chart"></div></div><script src="https://s3.tradingview.com/tv.js"></script><script>new TradingView.widget({autosize:true,symbol:"OANDA:XAUUSD",interval:"60",timezone:"Asia/Jakarta",theme:"dark",style:"1",locale:"id",container_id:"chart"});let p=2645.88;setInterval(()=>{p+=(Math.random()-.5);document.getElementById('h').innerText='$'+p.toFixed(2)},1200)</script></body></html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -26,10 +26,7 @@
 <div class="wrap">
 <div class="card"><h2>HARGA LANGSUNG</h2><div class="price-box"><div class="price-big" id="harga">$2,645.88</div><div class="price-small">EMAS SPOT OANDA • Update tiap detik • Bisa di-zoom 2 jari</div></div></div>
 <div class="card"><h2>GRAFIK TRADINGVIEW H1</h2><div class="chart"><div id="tv_chart" style="height:520px"></div></div></div>
-<div class="card"><h2>INFO TERMINAL</h2><div class="grid"><div class="item"><span>Pasangan</span><b>XAUUSD / EMAS</b></div><div class="item"><span>Jangka Waktu</span><b>H1</b></div><div class="item"><span>Zona</span><b>Jakarta WIB</b></div><div class="item"><span>Status</span><b style="color:#22c55e">AKTIF</b></div></div></div>
-<div class="footer">Terminal oleh Maulweh93 - Cikampek</div>
-</div>
-<script src="https://s3.tradingview.com/tv.js"></script>
+<div class="card"><h2>INFO TERMINAL</h2><div class="grid"><div class="item"><span>Pasangan</span><b>XAUUSD / EMAS</b></div><div class="item"><span>Jangka Waktu</span><b>H1</b></div><div class="item"><span>Zona</span><b>Jakarta WIB</b></div><div class="item"><span>Status</span><b stylingview.com/tv.js"></script>
 <script>
 new TradingView.widget({autosize:true,symbol:"OANDA:XAUUSD",interval:"60",timezone:"Asia/Jakarta",theme:"dark",style:"1",locale:"id",container_id:"tv_chart"});
 let b=2645;setInterval(()=>{b+=(Math.random()-0.5);document.getElementById('harga').innerText='$'+b.toFixed(2)},1500);
