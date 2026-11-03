@@ -1,89 +1,54 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALTHAF TRADING - XAUUSD H1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ALTHAF • Rive Pro Zoom</title>
 <style>
+:root{--bg:#070c18;--card:#111a2e;--line:#1e2e55;--y:#fbbf24;--g:#22c55e;--r:#ef4444;--m:#7a8aaa}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0f1c;color:#fff;font-family:system-ui,sans-serif;overflow-x:hidden}
-.top{background:#000;padding:14px 16px;border-bottom:2px solid #fbbf24;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99}
-.card{background:#121a2b;border:1px solid #1e2d4a;border-radius:16px;padding:16px;margin:16px}
-.harga{font-size:36px;font-weight:900;color:#fbbf24;text-align:center;letter-spacing:1px}
-.sub{text-align:center;color:#8a9bb5;font-size:13px;margin-top:6px}
-#chart{height:520px;width:100%;background:#0d1425;border-radius:12px;margin-top:14px;position:relative;overflow:hidden}
-canvas{width:100%;height:100%}
-.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}
-.stat{background:#0d1425;border:1px solid #1e2d4a;padding:12px;border-radius:10px;text-align:center}
-.stat b{display:block;color:#fbbf24;font-size:18px}
-.stat span{font-size:11px;color:#8a9bb5}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-.btn{padding:16px;border:none;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer}
-.buy{background:#22c55e;color:#000}
-.sell{background:#ef4444;color:#fff}
-.live{animation:pulse 2s infinite}
-@keyframes pulse{0%{opacity:1}50%{opacity:.6}100%{opacity:1}}
+body{background:var(--bg);color:#e2e8f0;font-family:sans-serif}
+.top{background:#000;border-bottom:2px solid var(--y);padding:10px 14px;display:flex;justify-content:space-between;position:sticky;top:0;z-index:10}
+.wrap{max-width:500px;margin:0 auto;padding:10px;display:grid;gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px}
+.flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bar{height:8px;background:#1a2744;border-radius:999px;display:flex;overflow:hidden;margin:6px 0}
+.tv{width:100%;height:450px;background:#000;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.btn{border:0;border-radius:14px;padding:15px;font-weight:900}
 </style>
 </head>
 <body>
-<div class="top">
-<b style="color:#fbbf24">ALTHAF • XAUUSD H1</b>
-<span style="background:#22c55e;color:#000;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:800" class="live">LIVE</span>
+<div class="top"><b style="color:var(--y)">ALTHAF • XAUUSD H1 • ZOOM</b><span style="background:var(--g);color:#000;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800">LIVE</span></div>
+<div class="wrap">
+<div class="card" style="display:flex;justify-content:space-between;align-items:center">
+<div><div id="price" style="font-family:monospace;font-size:28px;font-weight:800;color:var(--y)">$2,654.59</div><div id="time" style="font-size:11px;color:var(--m);font-family:monospace"></div></div>
+<div style="text-align:right"><div id="arusTxt" style="color:var(--g);font-weight:800">BUY Dominan</div><div id="bigTxt" style="font-weight:900;font-size:13px">BIG BUY</div></div>
 </div>
 
-<div class="card">
-<div class="harga" id="price">$2,645.88</div>
-<div class="sub">XAUUSD • Gold Spot • Spread 35 • <span id="time"></span></div>
-
-<div id="chart"><canvas id="c"></canvas></div>
-
-<div class="stats">
-<div class="stat"><b id="high">2,652.10</b><span>HIGH</span></div>
-<div class="stat"><b id="low">2,638.40</b><span>LOW</span></div>
-<div class="stat"><b style="color:#22c55e">+0.42%</b><span>24H</span></div>
+<div class="flow-grid">
+<div class="card"><div style="font-size:10px;color:var(--m);font-weight:700">ORDER FLOW</div><div style="display:flex;justify-content:space-between;font-family:monospace;font-size:11px;margin-top:4px"><span style="color:var(--g)" id="pb">BUY 62%</span><span style="color:var(--r)" id="ps">SELL 38%</span></div><div class="bar"><div id="fb" style="width:62%;background:var(--g)"></div><div id="fs" style="width:38%;background:var(--r)"></div></div><div style="font-size:11px;color:var(--m)">Net: <b id="net" style="color:var(--y)">+$264M</b></div></div>
+<div class="card"><div style="font-size:10px;color:var(--m);font-weight:700">BIG MONEY</div><div style="display:flex;gap:8px;align-items:center;margin-top:6px"><div id="dot" style="width:10px;height:10px;border-radius:50%;background:var(--g);box-shadow:0 0 10px var(--g)"></div><div><div id="bm" style="font-weight:900">Institusi BUY</div><div style="font-size:11px;color:var(--m)" id="vol">Vol: $1.2B</div></div></div></div>
 </div>
 
-<div class="actions">
-<button class="btn buy" onclick="trade('BUY')">BUY</button>
-<button class="btn sell" onclick="trade('SELL')">SELL</button>
+<div class="card" style="padding:0;overflow:hidden">
+<div style="padding:8px 12px;font-size:10px;color:var(--m);font-weight:700;display:flex;justify-content:space-between"><span>TRADINGVIEW • PINCH TO ZOOM</span><span style="color:var(--y)">XAUUSD</span></div>
+<div class="tv">
+<div id="tv_chart" style="width:100%;height:100%"></div>
 </div>
 </div>
 
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn" style="background:var(--g)" onclick="trade('BUY')">BUY ▲</button><button class="btn" style="background:var(--r);color:#fff" onclick="trade('SELL')">SELL ▼</button></div>
+<div style="text-align:center;font-size:10px;color:var(--m)">Cubit layar untuk ZOOM • Geser untuk lihat history</div>
+</div>
+
+<script src="https://s3.tradingview.com/tv.js"></script>
 <script>
-const canvas=document.getElementById('c');
-const ctx=canvas.getContext('2d');
-let w,h,prices=[];
-function resize(){w=canvas.offsetWidth;h=canvas.offsetHeight;canvas.width=w*2;canvas.height=h*2;ctx.scale(2,2);}
-window.addEventListener('resize',resize);resize();
-
-let base=2645.88;
-for(let i=0;i<100;i++){base+=(Math.random()-0.5)*1.2;prices.push(base);}
-function draw(){
- ctx.clearRect(0,0,w,h);
- ctx.strokeStyle='#1e2d4a';ctx.lineWidth=1;
- for(let i=0;i<5;i++){ctx.beginPath();ctx.moveTo(0,h/5*i);ctx.lineTo(w,h/5*i);ctx.stroke();}
- ctx.beginPath();ctx.strokeStyle='#fbbf24';ctx.lineWidth=2.5;
- prices.forEach((p,i)=>{
-   let x=i/(prices.length-1)*w;
-   let y=h-(p-Math.min(...prices))/(Math.max(...prices)-Math.min(...prices)+1)*h*0.8 - h*0.1;
-   if(i==0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
- });
- ctx.stroke();
- let grad=ctx.createLinearGradient(0,0,0,h);
- grad.addColorStop(0,'rgba(251,191,36,0.3)');grad.addColorStop(1,'rgba(251,191,36,0)');
- ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
-}
-draw();
-setInterval(()=>{
- base+=(Math.random()-0.5)*0.8;
- prices.shift();prices.push(base);
- document.getElementById('price').innerText='$'+base.toFixed(2);
- draw();
- document.getElementById('high').innerText=(Math.max(...prices)).toFixed(2);
- document.getElementById('low').innerText=(Math.min(...prices)).toFixed(2);
-},1200);
-setInterval(()=>{document.getElementById('time').innerText=new Date().toLocaleTimeString('id-ID')},1000);
-function trade(t){alert(t+' XAUUSD @ $'+base.toFixed(2)+' - Order Simulated Althaf!');}
+let price=2654.59,flow=62;
+new TradingView.widget({
+"autosize":true,"symbol":"OANDA:XAUUSD","interval":"60","timezone":"Asia/Jakarta","theme":"dark","style":"1","locale":"id","toolbar_bg":"#000","enable_publishing":false,"hide_top_toolbar":false,"hide_side_toolbar":false,"allow_symbol_change":true,"save_image":false,"container_id":"tv_chart"
+});
+function tick(){price+=(Math.random()-0.5)*0.6;flow=Math.max(35,Math.min(78,flow+(Math.random()-0.5)*2));document.getElementById('price').textContent='$'+price.toFixed(2);document.getElementById('pb').textContent='BUY '+flow.toFixed(0)+'%';document.getElementById('ps').textContent='SELL '+(100-flow).toFixed(0)+'%';document.getElementById('fb').style.width=flow+'%';document.getElementById('fs').style.width=(100-flow)+'%';const isBuy=flow>50;document.getElementById('arusTxt').textContent=isBuy?'BUY Dominan':'SELL Dominan';document.getElementById('arusTxt').style.color=isBuy?'#22c55e':'#ef4444';document.getElementById('bigTxt').textContent=isBuy?'BIG BUY':'BIG SELL';document.getElementById('bm').textContent=isBuy?'Institusi BUY':'Institusi SELL';document.getElementById('dot').style.background=isBuy?'#22c55e':'#ef4444';document.getElementById('net').textContent=(isBuy?'+$':'-$')+(Math.abs(flow-50)*5).toFixed(0)+'M';document.getElementById('time').textContent=new Date().toLocaleString('id-ID');document.getElementById('vol').textContent='Vol: $'+(1+Math.random()).toFixed(1)+'B'}
+setInterval(tick,1000);function trade(s){alert(s+' XAUUSD @ $'+price.toFixed(2))}
 </script>
 </body>
 </html>
