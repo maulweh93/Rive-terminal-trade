@@ -2,21 +2,88 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ALTHAF TRADING - XAUUSD H1</title>
 <style>
-body{margin:0;background:#0a0f1c;color:#fff;font-family:sans-serif}
-.top{background:#000;padding:14px;border-bottom:2px solid #fbbf24;display:flex;justify-content:space-between;position:sticky;top:0;z-index:99}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0f1c;color:#fff;font-family:system-ui,sans-serif;overflow-x:hidden}
+.top{background:#000;padding:14px 16px;border-bottom:2px solid #fbbf24;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99}
 .card{background:#121a2b;border:1px solid #1e2d4a;border-radius:16px;padding:16px;margin:16px}
-.harga{font-size:34px;font-weight:900;color:#fbbf24;text-align:center}
-#chart{height:580px;width:100%}
+.harga{font-size:36px;font-weight:900;color:#fbbf24;text-align:center;letter-spacing:1px}
+.sub{text-align:center;color:#8a9bb5;font-size:13px;margin-top:6px}
+#chart{height:520px;width:100%;background:#0d1425;border-radius:12px;margin-top:14px;position:relative;overflow:hidden}
+canvas{width:100%;height:100%}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}
+.stat{background:#0d1425;border:1px solid #1e2d4a;padding:12px;border-radius:10px;text-align:center}
+.stat b{display:block;color:#fbbf24;font-size:18px}
+.stat span{font-size:11px;color:#8a9bb5}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.btn{padding:16px;border:none;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer}
+.buy{background:#22c55e;color:#000}
+.sell{background:#ef4444;color:#fff}
+.live{animation:pulse 2s infinite}
+@keyframes pulse{0%{opacity:1}50%{opacity:.6}100%{opacity:1}}
 </style>
 </head>
 <body>
 <div class="top">
 <b style="color:#fbbf24">ALTHAF • XAUUSD H1</b>
-<span style="background:#22c55e;color:#000;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:800">LIVE</span>
+<span style="background:#22c55e;color:#000;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:800" class="live">LIVE</span>
 </div>
+
 <div class="card">
-<div class="harga">$2,645.88</div>
-<div style="text-align:center;color:#94a3b8;font
+<div class="harga" id="price">$2,645.88</div>
+<div class="sub">XAUUSD • Gold Spot • Spread 35 • <span id="time"></span></div>
+
+<div id="chart"><canvas id="c"></canvas></div>
+
+<div class="stats">
+<div class="stat"><b id="high">2,652.10</b><span>HIGH</span></div>
+<div class="stat"><b id="low">2,638.40</b><span>LOW</span></div>
+<div class="stat"><b style="color:#22c55e">+0.42%</b><span>24H</span></div>
+</div>
+
+<div class="actions">
+<button class="btn buy" onclick="trade('BUY')">BUY</button>
+<button class="btn sell" onclick="trade('SELL')">SELL</button>
+</div>
+</div>
+
+<script>
+const canvas=document.getElementById('c');
+const ctx=canvas.getContext('2d');
+let w,h,prices=[];
+function resize(){w=canvas.offsetWidth;h=canvas.offsetHeight;canvas.width=w*2;canvas.height=h*2;ctx.scale(2,2);}
+window.addEventListener('resize',resize);resize();
+
+let base=2645.88;
+for(let i=0;i<100;i++){base+=(Math.random()-0.5)*1.2;prices.push(base);}
+function draw(){
+ ctx.clearRect(0,0,w,h);
+ ctx.strokeStyle='#1e2d4a';ctx.lineWidth=1;
+ for(let i=0;i<5;i++){ctx.beginPath();ctx.moveTo(0,h/5*i);ctx.lineTo(w,h/5*i);ctx.stroke();}
+ ctx.beginPath();ctx.strokeStyle='#fbbf24';ctx.lineWidth=2.5;
+ prices.forEach((p,i)=>{
+   let x=i/(prices.length-1)*w;
+   let y=h-(p-Math.min(...prices))/(Math.max(...prices)-Math.min(...prices)+1)*h*0.8 - h*0.1;
+   if(i==0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+ });
+ ctx.stroke();
+ let grad=ctx.createLinearGradient(0,0,0,h);
+ grad.addColorStop(0,'rgba(251,191,36,0.3)');grad.addColorStop(1,'rgba(251,191,36,0)');
+ ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
+}
+draw();
+setInterval(()=>{
+ base+=(Math.random()-0.5)*0.8;
+ prices.shift();prices.push(base);
+ document.getElementById('price').innerText='$'+base.toFixed(2);
+ draw();
+ document.getElementById('high').innerText=(Math.max(...prices)).toFixed(2);
+ document.getElementById('low').innerText=(Math.min(...prices)).toFixed(2);
+},1200);
+setInterval(()=>{document.getElementById('time').innerText=new Date().toLocaleTimeString('id-ID')},1000);
+function trade(t){alert(t+' XAUUSD @ $'+base.toFixed(2)+' - Order Simulated Althaf!');}
+</script>
+</body>
+</html>
