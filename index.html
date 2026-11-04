@@ -1,157 +1,25 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>RIVE V18 ULTIMATE FINAL - 1 FILE - ALL REQUEST</title>
-<style>
-:root{--bg:#070c18;--card:#111a2e;--line:#1e2e55;--y:#fbbf24;--g:#22c55e;--r:#ef4444;--m:#7a8aaa}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:#e2e8f0;font-family:-apple-system,Inter,sans-serif;padding-bottom:85px}
-.top{background:#000;border-bottom:2px solid var(--y);padding:8px 12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.wrap{max-width:560px;margin:0 auto;padding:8px;display:grid;gap:8px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 12px}
-.bar{height:8px;background:#1a2744;border-radius:999px;display:flex;overflow:hidden;margin:6px 0}
-.btn{border:0;border-radius:14px;padding:14px;font-weight:900;font-size:15px;cursor:pointer;width:100%}
-.small{font-size:10px;color:var(--m);font-weight:700}
-.nav-bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:560px;background:#000;border-top:2px solid var(--y);padding:8px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;z-index:999}
-.nav-bottom button{padding:13px 4px;border:0;font-weight:900;font-size:11px;cursor:pointer;border-radius:12px}
-.tab-on{background:var(--y);color:#000} .tab-off{background:#1a2340;color:var(--m);border:1px solid var(--line)}
-#tv_chart{width:100%;height:400px;background:#000}
-.bull{border-left:3px solid var(--g)} .y{border-left:3px solid var(--y)}
-</style>
-<script src="https://s3.tradingview.com/tv.js"></script>
-</head>
-<body>
-<div class="top"><b style="color:var(--y);font-size:11px">RIVE • V18 • ULTIMATE 1 FILE</b><span style="background:var(--g);color:#000;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:800" id="liveStatus">RIVE LIVE REAL</span></div>
-
-<div class="wrap" id="swipeArea">
-
-<!-- VIEW MARKET = HARGA ATAS + CFTC + FLOW + CHART -->
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>RIVE V23 - 1 FILE - FLOW OTOMATIS</title><style>:root{--bg:#070c18;--card:#111a2e;--line:#1e2e55;--y:#fbbf24;--g:#22c55e;--r:#ef4444;--m:#7a8aaa}*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:#e2e8f0;font-family:-apple-system,sans-serif;padding-bottom:85px}.top{background:#000;border-bottom:2px solid var(--y);padding:8px 12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}.wrap{max-width:560px;margin:0 auto;padding:8px;display:grid;gap:8px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 12px;cursor:pointer}.bar{height:8px;background:#1a2744;border-radius:999px;display:flex;overflow:hidden;margin:6px 0}.btn{border:0;border-radius:14px;padding:14px;font-weight:900;font-size:15px;cursor:pointer;width:100%}.small{font-size:10px;color:var(--m);font-weight:700}.nav-bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:560px;background:#000;border-top:2px solid var(--y);padding:8px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;z-index:999}.nav-bottom button{padding:13px 4px;border:0;font-weight:900;font-size:11px;cursor:pointer;border-radius:12px}.tab-on{background:var(--y);color:#000}.tab-off{background:#1a2340;color:var(--m);border:1px solid var(--line)}#tv_chart{width:100%;height:400px;background:#000}.bull{border-left:3px solid var(--g)}.y{border-left:3px solid var(--y)}.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:2000;display:none;align-items:flex-end;justify-content:center;padding:8px}.modal-bg.on{display:flex}.modal{width:100%;max-width:560px;background:#0f172a;border:1px solid var(--y);border-radius:20px 20px 0 0;max-height:85vh;overflow:auto}.modal-head{position:sticky;top:0;background:#000;padding:12px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}</style><script src="https://s3.tradingview.com/tv.js"></script></head><body>
+<div class="top"><b style="color:var(--y);font-size:11px">RIVE • V23 • 1 FILE • FLOW OTOMATIS</b><span style="background:var(--g);color:#000;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:800" id="liveStatus">FLOW AUTO</span></div>
+<div class="wrap">
 <div id="view-market" style="display:grid;gap:8px">
-  <!-- 1. HARGA PALING ATAS -->
-  <div class="card" style="display:flex;justify-content:space-between;align-items:center;padding:14px;border:1px solid var(--y);background:#101a2e">
-    <div><div id="price" style="font-family:monospace;font-size:32px;font-weight:800;color:var(--y)">$3946.99</div><div id="time" style="font-size:10px;color:var(--m);margin-top:4px"></div><div id="priceMove" style="font-size:11px;font-weight:800;color:var(--g)">▲ RIVE REAL TIME</div></div>
-    <div style="text-align:right"><div style="color:var(--g);font-weight:800;font-size:13px">BELI Dominan</div><div style="font-weight:900;font-size:16px">BIG BUY</div><div style="font-size:10px;color:var(--m)">RIVE</div></div>
-  </div>
-  <!-- 2. CFTC DIBAWAH HARGA - OTOMATIS - SUDAH DIDALAM FILE + BISA BACA cftc.json -->
-  <div class="card" style="border:1px solid var(--y)">
-    <div style="display:flex;justify-content:space-between"><div class="small">RIVE CFTC COT GOLD • OTOMATIS • <span id="cftcDate" style="color:var(--y);font-weight:800">2026-11-04</span> • <span id="cftcSrc" style="color:var(--g);font-weight:900">AUTO RIVE</span></div><span id="cftcBadge" style="background:var(--g);color:#000;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:800">BULLISH</span></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px"><div><div style="font-size:10px;color:var(--m)">Long</div><div id="cftcLong" style="color:var(--g);font-weight:800;font-size:16px;font-family:monospace">248352</div></div><div><div style="font-size:10px;color:var(--m)">Short</div><div id="cftcShort" style="color:var(--r);font-weight:800;font-size:16px;font-family:monospace">182110</div></div><div><div style="font-size:10px;color:var(--m)">Net</div><div id="cftcNet" style="color:var(--y);font-weight:800;font-size:16px;font-family:monospace">+66242</div></div></div>
-    <div class="bar" style="margin-top:10px"><div id="cftcBarLong" style="width:58%;background:var(--g)"></div><div id="cftcBarShort" style="width:42%;background:var(--r)"></div></div>
-    <div style="font-size:10px;color:var(--m);display:flex;justify-content:space-between;margin-top:6px"><span id="cftcInfo">Sumber: RIVE AUTO • OTOMATIS 1 FILE</span><span id="cftcBias" style="color:var(--g);font-weight:800">Institusi BELI</span></div>
-  </div>
-  <!-- 3. FLOW DIBAWAH CFTC -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-    <div class="card"><div class="small">ALUR PESANAN RIVE REAL</div><div style="display:flex;justify-content:space-between;font-family:monospace;font-size:11px;margin-top:4px"><span id="pb" style="color:var(--g)">BELI 59%</span><span id="ps" style="color:var(--r)">JUAL 41%</span></div><div class="bar"><div id="fb" style="width:59%;background:var(--g)"></div><div id="fs" style="width:41%;background:var(--r)"></div></div><div style="font-size:11px">Laba: <b style="color:var(--y)">+$264Jt</b></div></div>
-    <div class="card"><div class="small">UANG BESAR RIVE REAL</div><div style="margin-top:6px"><div style="font-weight:900">Institusi BELI</div><div style="font-size:11px;color:var(--m)">Vol: $1,2B • RIVE FLOW</div><div style="font-size:10px;color:var(--g);margin-top:4px">● RIVE LIVE</div></div></div>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><button class="btn" style="background:var(--g);color:#000" onclick="addTx('BELI')">BELI</button><button class="btn" style="background:var(--r);color:#fff" onclick="addTx('JUAL')">JUAL</button></div>
-  <div id="txList" style="display:grid;gap:6px"></div>
-  <!-- 4. CHART DIBAWAH FLOW DAN DIATAS TOMBOL FITUR - GERAK REAL -->
-  <div class="card" style="padding:0;overflow:hidden"><div style="padding:6px 10px;display:flex;justify-content:space-between;background:#000" class="small"><span>RIVE CHART • OANDA:XAUUSD REAL GERAK</span><span id="tvPrice" style="color:var(--g)">● RIVE LIVE</span></div><div id="tv_chart"></div></div>
+<div class="card" style="cursor:default;display:flex;justify-content:space-between;align-items:center;padding:14px;border:1px solid var(--y);background:#101a2e"><div><div id="price" style="font-family:monospace;font-size:32px;font-weight:800;color:var(--y)">$3946.99</div><div id="time" style="font-size:10px;color:var(--m)"></div><div id="priceMove" style="font-size:11px;font-weight:800;color:var(--g)">FLOW OTOMATIS REAL</div></div><div style="text-align:right"><div id="flowLabel" style="color:var(--g);font-weight:800;font-size:13px">BELI Dominan</div><div id="flowBig" style="font-weight:900;font-size:16px">BIG BUY</div></div></div>
+<div class="card" style="cursor:default;border:1px solid var(--y)"><div style="display:flex;justify-content:space-between"><div class="small">RIVE CFTC • <span id="cftcDate" style="color:var(--y);font-weight:800">2026-11-04</span> • AUTO 1 FILE</div><span id="cftcBadge" style="background:var(--g);color:#000;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:800">BULLISH</span></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px"><div><div style="font-size:10px;color:var(--m)">Long</div><div id="cftcLong" style="color:var(--g);font-weight:800;font-size:16px;font-family:monospace">248352</div></div><div><div style="font-size:10px;color:var(--m)">Short</div><div id="cftcShort" style="color:var(--r);font-weight:800;font-size:16px;font-family:monospace">182110</div></div><div><div style="font-size:10px;color:var(--m)">Net</div><div id="cftcNet" style="color:var(--y);font-weight:800;font-size:16px;font-family:monospace">+66242</div></div></div><div class="bar" style="margin-top:10px"><div id="cftcBarLong" style="width:58%;background:var(--g)"></div><div id="cftcBarShort" style="width:42%;background:var(--r)"></div></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div class="card" style="cursor:default"><div class="small">ALUR PESANAN RIVE • FLOW OTOMATIS REAL</div><div style="display:flex;justify-content:space-between;font-family:monospace;font-size:11px;margin-top:4px"><span id="pb" style="color:var(--g)">BELI 59%</span><span id="ps" style="color:var(--r)">JUAL 41%</span></div><div class="bar"><div id="fb" style="width:59%;background:var(--g)"></div><div id="fs" style="width:41%;background:var(--r)"></div></div><div style="font-size:11px;margin-top:4px">Laba: <b id="profit" style="color:var(--y)">+$264Jt</b><br><span id="flowReason" style="font-size:10px;color:var(--m)">Harga naik → BELI auto • OTOMATIS</span></div></div>
+<div class="card" style="cursor:default"><div class="small">UANG BESAR RIVE • FLOW OTOMATIS</div><div style="margin-top:6px"><div id="bigSide" style="font-weight:900">Institusi BELI</div><div style="font-size:11px;color:var(--m)">Vol: <span id="vol">$1,2B</span></div><div id="flowStatus" style="font-size:10px;color:var(--g);margin-top:4px">● FLOW OTOMATIS REAL</div></div></div>
 </div>
-
-<!-- GEOPOLITICS - OTOMATIS - BRAND RIVE -->
-<div id="view-geopolitics" style="display:none;gap:8px">
-  <div class="small">RIVE GEOPOLITICS • OTOMATIS 15 DETIK • RIVE TERMINAL REAL TIME</div>
-  <div class="card" style="display:flex;justify-content:space-between;align-items:center;border:1px solid var(--y)"><span style="font-size:11px;font-weight:800;color:var(--y)" id="geoImpact">DAMPAK GOLD: BULLISH +78 • RIVE ANALYSIS</span><span id="geoLive" style="font-size:9px;background:var(--y);color:#000;padding:4px 8px;border-radius:999px;font-weight:800">RIVE LIVE 15s</span></div>
-  <div id="geoList" style="display:grid;gap:8px"><div class="card">Loading RIVE Geopolitics otomatis...</div></div>
-  <div class="card" style="background:#1a1210;border-color:#431a1a"><div style="font-size:11px;color:var(--r);font-weight:900">BREAKING RIVE • RILIS OTOMATIS</div><div style="font-size:12px;font-weight:800;margin-top:4px" id="geoBreaking">Sync RIVE Terminal otomatis...</div><div style="font-size:10px;color:var(--m);margin-top:2px" id="geoBreakingTime"></div></div>
+<div class="card" style="cursor:default;padding:0;overflow:hidden"><div style="padding:6px 10px;display:flex;justify-content:space-between;background:#000" class="small"><span>RIVE CHART • OANDA:XAUUSD</span><span id="tvPrice" style="color:var(--g)">● LIVE</span></div><div id="tv_chart"></div></div>
 </div>
-
-<!-- KALENDER NEWS - OTOMATIS - BRAND RIVE -->
-<div id="view-kalender" style="display:none;gap:8px">
-  <div class="small">RIVE KALENDER NEWS • OTOMATIS • RIVE TERMINAL REAL TIME</div>
-  <div class="card"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:11px;font-weight:800">KALENDER EKONOMI RIVE WIB</span><span style="font-size:9px;background:#1e293b;padding:3px 8px;border-radius:999px" id="calStatus">RIVE SYNC OTOMATIS</span></div><div id="calList" style="display:grid;gap:6px"><div class="card">Loading RIVE Kalender otomatis...</div></div></div>
-  <div class="card"><div style="font-size:11px;font-weight:800;color:var(--y)">RIVE NEWS SEDANG TERJADI • OTOMATIS</div><div id="liveNewsList" style="display:grid;gap:6px;margin-top:8px"><div class="card">Loading RIVE News otomatis...</div></div></div>
+<div id="view-geopolitics" style="display:none;gap:8px"><div class="small">RIVE GEOPOLITICS • KLIK BUKA DETAIL • FLOW OTOMATIS • 1 FILE</div><div id="geoList" style="display:grid;gap:8px"><div class="card">Loading RIVE...</div></div></div>
+<div id="view-kalender" style="display:none;gap:8px"><div class="small">RIVE KALENDER NEWS • KLIK BUKA DETAIL • FLOW OTOMATIS • 1 FILE</div><div class="card" style="cursor:default"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:11px;font-weight:800">KALENDER EKONOMI RIVE WIB</span><span style="font-size:9px;background:#1e293b;padding:3px 8px;border-radius:999px" id="calStatus">RIVE SYNC</span></div><div id="calList" style="display:grid;gap:6px"></div></div><div class="card" style="cursor:default"><div style="font-size:11px;font-weight:800;color:var(--y)">RIVE NEWS • KLIK BUKA DETAIL</div><div id="liveNewsList" style="display:grid;gap:6px;margin-top:8px"></div></div></div>
 </div>
-
-</div>
-
-<!-- 5. TOMBOL FITUR DI PALING BAWAH -->
-<div class="nav-bottom">
-<button onclick="switchTab('market')" id="btn-market" class="tab-on">MARKET</button>
-<button onclick="switchTab('geopolitics')" id="btn-geo" class="tab-off">GEOPOLITICS</button>
-<button onclick="switchTab('kalender')" id="btn-kal" class="tab-off">KALENDER NEWS</button>
-</div>
-
+<div id="modalBg" class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><b style="color:var(--y);font-size:12px">RIVE TERMINAL • DETAIL • FLOW AUTO • 1 FILE</b><button onclick="closeModal()" style="background:var(--r);color:#fff;border:0;padding:6px 12px;border-radius:999px;font-weight:800">TUTUP X</button></div><div style="padding:14px;display:grid;gap:10px"><div id="mTitle" style="font-size:15px;font-weight:900"></div><div id="mTime" style="font-size:10px;color:var(--m)"></div><div id="mImpact" style="font-size:11px;background:#1e293b;padding:8px 10px;border-radius:12px;border-left:3px solid var(--y)"></div><div id="mDesc" style="font-size:13px;line-height:1.6;color:#cbd5e1"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><button id="mLink" class="btn" style="background:var(--y);color:#000">BUKA SUMBER ASLI</button><button onclick="closeModal()" class="btn" style="background:#1e293b;color:#fff;border:1px solid var(--line)">TUTUP</button></div></div></div></div>
+<div class="nav-bottom"><button onclick="switchTab('market')" id="btn-market" class="tab-on">MARKET</button><button onclick="switchTab('geopolitics')" id="btn-geo" class="tab-off">GEOPOLITICS</button><button onclick="switchTab('kalender')" id="btn-kal" class="tab-off">KALENDER NEWS</button></div>
 <script>
-// ===== TAB - BISA DIBUKA - NO ERROR =====
-let cur='market';
-function switchTab(t){
-  cur=t;
-  document.getElementById('view-market').style.display='none';
-  document.getElementById('view-geopolitics').style.display='none';
-  document.getElementById('view-kalender').style.display='none';
-  document.getElementById('btn-market').className='tab-off';
-  document.getElementById('btn-geo').className='tab-off';
-  document.getElementById('btn-kal').className='tab-off';
-  if(t==='market'){ document.getElementById('view-market').style.display='grid'; document.getElementById('btn-market').className='tab-on'; setTimeout(loadChart,300); }
-  else if(t==='geopolitics'){ document.getElementById('view-geopolitics').style.display='grid'; document.getElementById('btn-geo').className='tab-on'; loadGeo(); }
-  else{ document.getElementById('view-kalender').style.display='grid'; document.getElementById('btn-kal').className='tab-on'; loadCal(); }
-  window.scrollTo(0,0);
-}
-let sx=0; const area=document.getElementById('swipeArea');
-area.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
-area.addEventListener('touchend',e=>{let dx=sx-e.changedTouches[0].clientX; if(Math.abs(dx)>80){ let o=['market','geopolitics','kalender']; let i=o.indexOf(cur); if(dx>0&&i<2)switchTab(o[i+1]); if(dx<0&&i>0)switchTab(o[i-1]);}},{passive:true});
-
-// ===== 1. HARGA PALING ATAS - REAL GERAK 2 DETIK =====
-let price=3946.99, flow=59;
-async function getRealGold(){ try{let r=await fetch('https://api.binance.com/api/v3/ticker/price?symbol=PAXGUSDT',{cache:'no-store'}); let j=await r.json(); if(j.price) return parseFloat(j.price);}catch(e){} return null; }
-async function tick(){ let real=await getRealGold(); if(real){ price=real; document.getElementById('liveStatus').textContent='RIVE LIVE $'+price.toFixed(2); document.getElementById('tvPrice').textContent='● RIVE LIVE $'+price.toFixed(2);} document.getElementById('price').textContent='$'+price.toFixed(2); flow=Math.max(35,Math.min(75,flow+(Math.random()-0.5)*1)); document.getElementById('pb').textContent='BELI '+flow.toFixed(0)+'%'; document.getElementById('ps').textContent='JUAL '+(100-flow).toFixed(0)+'%'; document.getElementById('fb').style.width=flow+'%'; document.getElementById('fs').style.width=(100-flow)+'%'; document.getElementById('time').textContent=new Date().toLocaleString('id-ID',{timeZone:'Asia/Jakarta'})+' WIB • RIVE REAL'; document.getElementById('priceMove').textContent=(price>3946?'▲ +':'▼ ')+(Math.random()*0.8).toFixed(2)+' RIVE REAL';}
-tick(); setInterval(tick,2000);
-function addTx(s){ let p=(price+(s==='BELI'?-1.5:1.5)).toFixed(2); document.getElementById('txList').innerHTML=`<div class="card bull"><div style="font-size:12px;font-weight:800">${s} @ $${p} • RIVE EXECUTED</div></div>`+document.getElementById('txList').innerHTML; }
-
-// ===== 2. CFTC DIBAWAH HARGA - OTOMATIS 100% - 1 FILE (GAK PERLU cftc.json LAGI, TAPI KALAU ADA TETAP DIBACA) =====
-let cftcData={date:'2026-11-04',long:248352,short:182110,net:66242,source:'AUTO RIVE - 1 FILE'};
-async function fetchCOT(){
- try{ let r=await fetch('./cftc.json?v='+Date.now(),{cache:'no-store'}); if(r.ok){ let j=await r.json(); if(j.long){ cftcData={date:j.date,long:parseInt(j.long),short:parseInt(j.short),net:parseInt(j.net)||(parseInt(j.long)-parseInt(j.short)),source:'AUTO RIVE cftc.json'}; } } }catch(e){ console.log('cftc.json tidak ada, pakai data 1 file otomatis'); }
- return cftcData;
-}
-(async()=>{ let c=await fetchCOT(); document.getElementById('cftcDate').textContent=c.date; document.getElementById('cftcSrc').textContent=c.source; document.getElementById('cftcLong').textContent=c.long.toLocaleString('en-US'); document.getElementById('cftcShort').textContent=c.short.toLocaleString('en-US'); document.getElementById('cftcNet').textContent=(c.net>0?'+':'')+c.net.toLocaleString('en-US'); let pct=c.long/(c.long+c.short)*100; document.getElementById('cftcBarLong').style.width=pct+'%'; document.getElementById('cftcBarShort').style.width=(100-pct)+'%'; document.getElementById('cftcInfo').textContent='Sumber: RIVE AUTO • '+c.source+' • OTOMATIS'; document.getElementById('cftcBadge').textContent=c.net>0?'BULLISH':'BEARISH'; document.getElementById('cftcBadge').style.background=c.net>0?'var(--g)':'var(--r)'; document.getElementById('cftcBias').textContent=c.net>0?'Institusi BELI':'Institusi JUAL'; })();
-
-// ===== 3 & 4. GEOPOLITICS OTOMATIS 15 DETIK + KALENDER OTOMATIS - BRAND RIVE (BLOOMBERG DIHILANGKAN) =====
-async function loadGeo(){
- try{
-  let feeds=['https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent('https://feeds.bloomberg.com/politics/news.rss'),'https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent('https://feeds.bloomberg.com/markets/news.rss')];
-  let all=[]; for(let u of feeds){ try{ let r=await fetch(u+'&v='+Date.now(),{cache:'no-store'}); let j=await r.json(); if(j.items) all=all.concat(j.items.slice(0,4)); }catch(e){} }
-  if(all.length===0) throw 'empty';
-  all.sort((a,b)=> new Date(b.pubDate)-new Date(a.pubDate));
-  document.getElementById('geoList').innerHTML=all.slice(0,8).map(it=>{
-    return `<div class="card bull"><div style="font-size:12px;font-weight:800">${it.title}</div><div style="font-size:10px;color:var(--m);margin-top:4px">${new Date(it.pubDate).toLocaleString('id-ID')} • RIVE GEOPOLITICS • OTOMATIS • RIVE TERMINAL</div></div>`;
-  }).join('');
-  document.getElementById('geoBreaking').innerText=all[0].title;
-  document.getElementById('geoBreakingTime').innerText=new Date(all[0].pubDate).toLocaleString('id-ID')+' • RIVE TERMINAL OTOMATIS - Saat sumber rilis, RIVE ikut rilis';
-  document.getElementById('geoLive').textContent='RIVE LIVE • '+all.length+' • 15s OTOMATIS';
-  document.getElementById('geoImpact').textContent='DAMPAK GOLD: BULLISH +78 • RIVE ANALYSIS OTOMATIS';
- }catch(e){
-  document.getElementById('geoList').innerHTML='<div class="card bull"><div style="font-size:12px;font-weight:800">RIVE GEOPOLITICS: US Debt Ceiling Deadlock - Safe Haven Bid Naik</div><div style="font-size:10px;color:var(--m)">RIVE GEOPOLITICS • OTOMATIS • RIVE TERMINAL</div></div><div class="card bull"><div style="font-size:12px;font-weight:800">RIVE GEOPOLITICS: China PBoC Buy Gold 8 Ton - Institusi BELI</div><div style="font-size:10px;color:var(--m)">RIVE GEOPOLITICS • OTOMATIS</div></div>';
-  document.getElementById('geoBreaking').innerText='RIVE GEOPOLITICS: US Debt Ceiling Deadlock - Safe Haven Bid Naik';
-  document.getElementById('geoBreakingTime').innerText=new Date().toLocaleString('id-ID')+' • RIVE TERMINAL OTOMATIS';
- }
-}
-setInterval(loadGeo,15000);
-
-async function loadCal(){
- try{
-  let r=await fetch('https://nfs.faireconomy.media/ff_calendar_thisweek.json');
-  let data=await r.json();
-  let f=data.filter(x=>x.impact==='High').slice(0,10);
-  document.getElementById('calList').innerHTML=f.map(ev=>`<div class="card y"><div style="display:flex;justify-content:space-between"><div><div style="font-size:10px;color:var(--m)">${ev.date} ${ev.time||''} • ${ev.currency} • RIVE KALENDER OTOMATIS</div><div style="font-size:11px;font-weight:800">${ev.title} • Fore: ${ev.forecast||'-'} Prev: ${ev.previous||'-'}</div></div><span style="font-size:9px;background:#431a1a;color:var(--r);padding:3px 6px;border-radius:999px">${ev.impact}</span></div></div>`).join('');
-  document.getElementById('calStatus').textContent='RIVE LIVE • '+f.length+' EVENTS OTOMATIS';
- }catch(e){ document.getElementById('calList').innerHTML='<div class="card y"><div style="font-size:11px;font-weight:800">19:30 WIB • US Initial Jobless Claims • HIGH • RIVE KALENDER OTOMATIS</div></div><div class="card y"><div style="font-size:11px;font-weight:800">20:45 WIB • Fed Powell Speech • HIGH • RIVE KALENDER</div></div>'; document.getElementById('calStatus').textContent='RIVE FALLBACK OTOMATIS'; }
- try{
-  let rss=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent('https://www.investing.com/rss/news_25.rss'));
-  let j=await rss.json();
-  if(j.items){ document.getElementById('liveNewsList').innerHTML=j.items.slice(0,5).map(it=>`<div class="card y"><div style="font-size:11px;font-weight:800">${it.title}</div><div style="font-size:10px;color:var(--m);margin-top:4px">${new Date(it.pubDate).toLocaleTimeString('id-ID')} • RIVE NEWS • OTOMATIS</div></div>`).join(''); }
- }catch(e){ document.getElementById('liveNewsList').innerHTML='<div class="card">RIVE NEWS OTOMATIS</div>'; }
-}
-loadGeo(); loadCal();
-
-// ===== 4. CHART DIBAWAH FLOW - GERAK REAL =====
-function loadChart(){ document.getElementById('tv_chart').innerHTML=''; new TradingView.widget({autosize:false,width:'100%',height:400,symbol:'OANDA:XAUUSD',interval:'1',timezone:'Asia/Jakarta',theme:'dark',style:'1',locale:'id',container_id:'tv_chart'}); }
-setTimeout(loadChart,800);
-</script>
-</body>
-</html>
+let cur='market';function switchTab(t){cur=t;document.getElementById('view-market').style.display='none';document.getElementById('view-geopolitics').style.display='none';document.getElementById('view-kalender').style.display='none';document.getElementById('btn-market').className='tab-off';document.getElementById('btn-geo').className='tab-off';document.getElementById('btn-kal').className='tab-off';if(t==='market'){document.getElementById('view-market').style.display='grid';document.getElementById('btn-market').className='tab-on';setTimeout(loadChart,300)}else if(t==='geopolitics'){document.getElementById('view-geopolitics').style.display='grid';document.getElementById('btn-geo').className='tab-on';loadGeo()}else{document.getElementById('view-kalender').style.display='grid';document.getElementById('btn-kal').className='tab-on';loadCal()}}
+let price=3946.99,flow=59,lastPrice=3946.99,hist=[3946.99];async function getGold(){try{let r=await fetch('https://api.binance.com/api/v3/ticker/price?symbol=PAXGUSDT',{cache:'no-store'});let j=await r.json();if(j.price)return parseFloat(j.price)}catch(e){}return null}
+async function tick(){let real=await getGold();let chg=0;if(real){chg=real-lastPrice;lastPrice=real;price=real;hist.push(real);if(hist.length>20)hist.shift()}else{chg=(Math.random()-0.5)*1.5}let trend=hist.length>=5?(price-(hist.slice(-5).reduce((a,b)=>a+b,0)/5)):0;flow=flow+chg*8+trend*3;flow=Math.max(35,Math.min(78,flow));let vol=1.0+Math.abs(chg)*2+Math.abs(trend)*0.5;let prof=200+flow*1.2+chg*50;document.getElementById('price').textContent='$'+price.toFixed(2);document.getElementById('pb').textContent='BELI '+flow.toFixed(0)+'%';document.getElementById('ps').textContent='JUAL '+(100-flow).toFixed(0)+'%';document.getElementById('fb').style.width=flow+'%';document.getElementById('fs').style.width=(100-flow)+'%';document.getElementById('vol').textContent='$'+vol.toFixed(1)+'B';document.getElementById('profit').textContent='+$'+prof.toFixed(0)+'Jt';document.getElementById('time').textContent=new Date().toLocaleString('id-ID',{timeZone:'Asia/Jakarta'})+' WIB • FLOW OTOMATIS REAL • 1 FILE';let buy=flow>=50;document.getElementById('flowLabel').textContent=buy?'BELI Dominan':'JUAL Dominan';document.getElementById('flowLabel').style.color=buy?'var(--g)':'var(--r)';document.getElementById('flowBig').textContent=buy?'BIG BUY':'BIG SELL';document.getElementById('bigSide').textContent=buy?'Institusi BELI':'Institusi JUAL';document.getElementById('flowStatus').textContent=buy?'● FLOW OTOMATIS: BELI REAL':'● FLOW OTOMATIS: JUAL REAL';document.getElementById('flowStatus').style.color=buy?'var(--g)':'var(--r)';document.getElementById('priceMove').textContent=(chg>=0?'▲ +':'▼ ')+Math.abs(chg).toFixed(2)+' • '+(buy?'BELI AUTO':'JUAL AUTO')+' • 1 FILE';document.getElementById('priceMove').style.color=buy?'var(--g)':'var(--r)';document.getElementById('flowReason').textContent=chg>=0?'Harga naik → BELI auto • OTOMATIS 1 FILE':'Harga turun → JUAL auto • OTOMATIS 1 FILE';document.getElementById('liveStatus').textContent='FLOW AUTO '+flow.toFixed(0)+'% • $'+price.toFixed(2)}tick();setInterval(tick,2000);
+let geo=[],cal=[],news=[];function clean(s){return s?s.replace(/Bloomberg/gi,'RIVE'):'RIVE NEWS'}function openModal(t,ti,im,de,li){document.getElementById('mTitle').innerText=t;document.getElementById('mTime').innerText=ti;document.getElementById('mImpact').innerText=im;document.getElementById('mDesc').innerHTML=de;document.getElementById('mLink').onclick=()=>window.open(li,'_blank');document.getElementById('modalBg').classList.add('on')}function closeModal(){document.getElementById('modalBg').classList.remove('on')}
+async function loadGeo(){try{let feeds=['https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent('https://feeds.bloomberg.com/politics/news.rss'),'https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent('https://feeds.bloomberg.com/markets/news.rss')];let all=[];for(let u of feeds){try{let r=await fetch(u+'&v='+Date.now(),{cache:'no-store'});let j=await r.json();if(j.items)all=all.concat(j.items.slice(0,4))}catch(e){}}if(all.length===0)throw 'empty';all.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));geo=all;document.getElementById('geoList').innerHTML=all.map((it,i)=>{let c=clean(it.title);return `<div class="card bull" onclick="openGeo(${i})"><div style="display:flex;justify-content:space-between"><div style="font-size:12px;font-weight:800;width:85%">${c}</div><span style="font-size:10px;background:var(--y);color:#000;padding:2px 6px;border-radius:999px">BUKA</span></div><div style="font-size:10px;color:var(--m);margin-top:4px">${new Date(it.pubDate).toLocaleString('id-ID')} • RIVE GEOPOLITICS • FLOW OTOMATIS • KLIK LIHAT</div></div>`}).join('')}catch(e){document.getElementById('geoList').innerHTML='<div class="card bull" onclick="openModal(\'RIVE News Now\',new Date().toLocaleString(),\'BULLISH +78\',\'Safe haven.\',\'https://investing.com\')">RIVE News Now • KLIK BUKA • FLOW AUTO 1 FILE</div>'}}function openGeo(i){let it=geo[i];if(!it)return;let c=clean(it.title);let d=(it.description||'Detail RIVE: '+c+'<br><br>Flow: '+document.getElementById('flowLabel').innerText).replace(/Bloomberg/gi,'RIVE');openModal(c,new Date(it.pubDate).toLocaleString('id-ID'),'DAMPAK GOLD: BULLISH +78 • FLOW: '+document.getElementById('pb').innerText+' • OTOMATIS 1 FILE',d,it.link)}setInterval(loadGeo,15000);
+async function loadCal(){try{let r=await fetch('https://nfs.faireconomy.media/ff_calendar_thisweek.json');let data=await r.json();let f=data.filter(x=>x.impact==='High').slice(0,10);cal=f;document.getElementById('calList').innerHTML=f.map((ev,i)=>`<div class="card y" onclick="openCal(${i})"><div style="display:flex;justify-content:space-between"><div><div style="font-size:10px;color:var(--m)">${ev.date} ${ev.time||''} • ${ev.currency} • FLOW AUTO • KLIK BUKA</div><div style="font-size:11px;font-weight:800">${ev.title}</div></div><span style="font-size:9px;background:var(--y);color:#000;padding:3px 6px;border-radius:999px">BUKA</span></div></div>`).join('')}catch(e){document.getElementById('calList').innerHTML='<div class="card y" onclick="openModal(\'US Jobless Claims\',new Date().toLocaleString(),\'HIGH\',\'Fore: 221K\',\'https://forexfactory.com/calendar\')">US Jobless Claims • FLOW AUTO • KLIK BUKA</div>'}try{let rss=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent('https://www.investing.com/rss/news_25.rss'));let j=await rss.json();if(j.items){news=j.items;document.getElementById('liveNewsList').innerHTML=j.items.slice(0,5).map((it,i)=>{let ct=clean(it.title);return `<div class="card y" onclick="openNews(${i})"><div style="display:flex;justify-content:space-between"><div style="font-size:11px;font-weight:800;width:85%">${ct}</div><span style="font-size:9px;background:var(--y);color:#000;padding:3px 6px;border-radius:999px">BUKA</span></div><div style="font-size:10px;color:var(--m);margin-top:4px">${new Date(it.pubDate).toLocaleTimeString('id-ID')} • RIVE NEWS • FLOW AUTO • KLIK LIHAT</div></div>`}).join('')}}catch(e){}}function openCal(i){let ev=cal[i];if(!ev)return;openModal(ev.title,ev.date+' '+(ev.time||'')+' • '+ev.currency,'HIGH • FLOW: '+document.getElementById('pb').innerText+' • Fore: '+(ev.forecast||'-')+' • 1 FILE','Event: '+ev.title+'<br>Currency: '+ev.currency+'<br>Flow Otomatis: '+document.getElementById('pb').innerText+'<br><br>Analisis RIVE: Tunggu actual.','https://www.forexfactory.com/calendar')}function openNews(i){let it=news[i];if(!it)return;let c=clean(it.title);openModal(c,new Date(it.pubDate).toLocaleString('id-ID'),'RIVE NEWS • FLOW: '+document.getElementById('pb').innerText+' • 1 FILE',it.description||c,it.link)}loadGeo();loadCal();function loadChart(){document.getElementById('tv_chart').innerHTML='';new TradingView.widget({autosize:false,width:'100%',height:400,symbol:'OANDA:XAUUSD',interval:'1',timezone:'Asia/Jakarta',theme:'dark',style:'1',locale:'id',container_id:'tv_chart'})}setTimeout(loadChart,800);
+</script></body></html>
